@@ -55,6 +55,10 @@ export const NextButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
+
+  &:disabled {
+    background-color: #0011b3;
+  }
 `;
 
 export const QuizCompletedMessage = styled.p`

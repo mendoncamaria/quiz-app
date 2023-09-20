@@ -49,7 +49,9 @@ const Quiz = () => {
           </OptionItem>
         ))}
       </OptionsList>
-      <NextButton onClick={handleNextButtonClick}>Next</NextButton>
+      <NextButton onClick={handleNextButtonClick} disabled={!selectedAnswer}>
+        Next
+      </NextButton>
     </QuizContainer>
   ) : (
     <QuizContainer>
