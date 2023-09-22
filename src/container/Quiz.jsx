@@ -6,9 +6,8 @@ import {
   OptionsList,
   OptionItem,
   NextButton,
-  QuizCompletedMessage,
-  Score,
 } from '../styles/StyledComponents';
+import { PreviewPage } from './Preview';
 
 const Quiz = () => {
   const {
@@ -33,28 +32,16 @@ const Quiz = () => {
     nextQuestion();
   };
 
-  const getRemarks = (questionLength, correctAns) => {
-    if (correctAns === questionLength) {
-      return 'Excellent';
-    } else if (correctAns === 8 || correctAns === 9) {
-      return 'Very Good';
-    } else if (correctAns === 6 || correctAns === 7) {
-      return 'Good';
-    }
-    return 'Better Luck Next Time';
-  };
-
   const isQuizCompleted = currentQuestionIndex >= questions.length;
 
   return (
     <QuizContainer>
       {isQuizCompleted ? (
         <>
-          <QuizCompletedMessage>RESULT</QuizCompletedMessage>
-          <Score>Total Questions: {questions.length}</Score>
-          <Score>Correct Answers: {correctAnswers}</Score>
-          <Score>Wrong Answers: {questions.length - correctAnswers}</Score>
-          <Score>Remarks: {getRemarks(questions.length, correctAnswers)}</Score>
+          <PreviewPage
+            correctAnswers={correctAnswers}
+            totalQuestions={questions.length}
+          />
         </>
       ) : (
         <>
