@@ -1,11 +1,15 @@
 import Quiz from './Quiz';
+import './App.css';
+import { QuizMainHeading } from './StyledComponents';
 
 function App() {
   return (
-    <>
-      <h1>Quiz Application</h1>
+    <div className="app">
+      <QuizMainHeading>
+        Quiz Application
+      </QuizMainHeading>
       <Quiz />
-    </>
+    </div>
   );
 }
 
