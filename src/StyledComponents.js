@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const QuizContainer = styled.div`
-  max-width: 600px;
+  max-width: 60%;
   margin: 0 auto;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 650px) {
+    max-width: 80%;
+  }
 `;
 
 export const Question = styled.h2`
