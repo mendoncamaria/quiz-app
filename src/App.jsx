@@ -1,6 +1,6 @@
-import Quiz from './Quiz';
-import './App.css';
-import { QuizMainHeading } from './StyledComponents';
+import Quiz from './container/Quiz';
+import './styles/App.css';
+import { QuizMainHeading } from './styles/StyledComponents';
 
 function App() {
   return (
