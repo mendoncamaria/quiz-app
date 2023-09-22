@@ -88,3 +88,8 @@ export const Score = styled.p`
   margin-top: 20px;
   color: #691249;
 `;
+
+export const Container = styled.div`
+  background-image: linear-gradient(to right, #e2229c, #dfb9dc);
+  height: 100vh;
+`;
