@@ -11,6 +11,9 @@ export const QuizContainer = styled.div`
   @media (max-width: 650px) {
     max-width: 80%;
   }
+  @media screen and (min-width: 1400px) {
+    max-width: 40%;
+  }
 `;
 
 export const Question = styled.h2`
