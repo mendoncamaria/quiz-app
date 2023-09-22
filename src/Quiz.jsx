@@ -35,8 +35,22 @@ const Quiz = () => {
     nextQuestion();
   };
 
+  const getRemarks = (questionLength, correctAns) => {
+    if (correctAns === questionLength) {
+      return 'Excellent'
+    } else if(correctAns === 8 || correctAns === 9){
+      return 'Very good'
+    } else if(correctAns === 6 || correctAns === 7){
+      return 'Good'
+    }
+    return 'Could be better'
+  };
+
   return currentQuestionIndex < questions.length ? (
     <QuizContainer>
+      <p>
+        {currentQuestionIndex + 1}/{questions.length}
+      </p>
       <Question>{currentQuestion.question}</Question>
       <OptionsList>
         {currentQuestion.options.map((option) => (
@@ -55,10 +69,11 @@ const Quiz = () => {
     </QuizContainer>
   ) : (
     <QuizContainer>
-      <QuizCompletedMessage>Quiz completed!</QuizCompletedMessage>
-      <Score>
-        Your Score: {correctAnswers}/{questions.length}
-      </Score>
+      <QuizCompletedMessage>RESULT</QuizCompletedMessage>
+      <Score>Total Questions: {questions.length}</Score>
+      <Score>Correct Answers: {correctAnswers}</Score>
+      <Score>Wrong Answers: {questions.length - correctAnswers}</Score>
+      <Score>Remarks: {getRemarks(questions.length, correctAnswers)}</Score>
     </QuizContainer>
   );
 };
