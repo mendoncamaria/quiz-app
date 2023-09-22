@@ -18,8 +18,8 @@ export const QuizContainer = styled.div`
 
 export const Question = styled.h2`
   font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+  margin: 0;
+  color: #59094a;
   text-align: center;
 `;
 
@@ -123,4 +123,19 @@ export const PreviewMessage = styled.p`
   margin: 20px 0;
   color: #9d176c;
   font-weight: bold;
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+`;
+
+export const CurrentQuestion = styled.p`
+  font-size: 30px;
+  color: #ddbdd5;
+  margin: 0;
+`;
+export const CurrentQuestionDark = styled.span`
+  font-size: 50px;
+  color: #9d176c;
 `;

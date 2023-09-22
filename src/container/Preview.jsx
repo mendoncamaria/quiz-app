@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { getRemarks } from '../helpers/utils';
 import {
   BackButton,
+  ButtonContainer,
   NextButton,
   PreviewAnswer,
   PreviewMessage,
@@ -39,10 +40,10 @@ export const PreviewPage = ({
           </PreviewQuestion>
         ))}
       </Score>
-      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+      <ButtonContainer>
         <NextButton onClick={() => setResult(true)}>NEXT</NextButton>
         <BackButton onClick={onBackButtonClick}>BACK</BackButton>
-      </div>
+      </ButtonContainer>
     </>
   );
 };

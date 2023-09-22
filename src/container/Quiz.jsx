@@ -6,6 +6,9 @@ import {
   OptionsList,
   OptionItem,
   NextButton,
+  ButtonContainer,
+  CurrentQuestion,
+  CurrentQuestionDark,
 } from '../styles/StyledComponents';
 import { PreviewPage } from './Preview';
 
@@ -60,9 +63,14 @@ const Quiz = () => {
         </>
       ) : (
         <>
-          <p>
-            {currentQuestionIndex + 1}/{questions.length}
-          </p>
+          <CurrentQuestion>
+            <CurrentQuestionDark>
+              {currentQuestionIndex + 1 <= 9
+                ? `0${currentQuestionIndex + 1}`
+                : currentQuestionIndex + 1}
+            </CurrentQuestionDark>
+            /{questions.length}
+          </CurrentQuestion>
           <>
             <Question>{currentQuestion.question}</Question>
             <OptionsList>
@@ -80,9 +88,7 @@ const Quiz = () => {
               ))}
             </OptionsList>
           </>
-          <div
-            style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}
-          >
+          <ButtonContainer>
             <NextButton
               onClick={handleNextButtonClick}
               disabled={
@@ -91,7 +97,7 @@ const Quiz = () => {
             >
               NEXT
             </NextButton>
-          </div>
+          </ButtonContainer>
         </>
       )}
     </QuizContainer>
