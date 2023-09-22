@@ -93,3 +93,16 @@ export const Container = styled.div`
   background-image: linear-gradient(to right, #e2229c, #dfb9dc);
   height: 100vh;
 `;
+
+export const PreviewQuestion = styled.p`
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  color: #691249;
+`;
+export const PreviewAnswer = styled.span`
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 0;
+  color: #691249;
+`;

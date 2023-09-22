@@ -95,6 +95,7 @@ const useStore = create((set) => ({
   ],
   currentQuestionIndex: 0,
   selectedAnswer: null,
+  selectedAnswers: Array.from({ length: 10 }, () => null), // Initialize with null values for 10 questions
 
   nextQuestion: () =>
     set((state) => ({
@@ -102,7 +103,18 @@ const useStore = create((set) => ({
       selectedAnswer: null,
     })),
 
-  selectAnswer: (answer) => set({ selectedAnswer: answer }),
+  selectAnswer: (answer) =>
+    set((state) => {
+      const updatedSelectedAnswers = [...state.selectedAnswers];
+      updatedSelectedAnswers[state.currentQuestionIndex] = answer;
+      return {
+        selectedAnswer: answer,
+        selectedAnswers: updatedSelectedAnswers,
+      };
+    }),
+
+  result: false,
+  setResult: (result) => set(() => ({ result })),
 }));
 
 export default useStore;
