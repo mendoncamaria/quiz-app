@@ -69,10 +69,10 @@ export const QuizCompletedMessage = styled.p`
 export const QuizMainHeading = styled.p`
   font-size: 40px;
   text-align: center;
-  margin: 20px 0;
+  margin: 0;
   color: #000;
   font-weight: bold;
-  padding-top: 2rem;
+  padding: 2rem 0;
 `;
 
 export const Score = styled.p`
