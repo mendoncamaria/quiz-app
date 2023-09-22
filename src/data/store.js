@@ -94,6 +94,9 @@ const useStore = create((set) => ({
     },
   ],
   currentQuestionIndex: 0,
+  setCurrentQuestionIndex: (currentQuestionIndex) =>
+    set(() => ({ currentQuestionIndex })),
+
   selectedAnswer: null,
   selectedAnswers: Array.from({ length: 10 }, () => null), // Initialize with null values for 10 questions
 
@@ -115,6 +118,9 @@ const useStore = create((set) => ({
 
   result: false,
   setResult: (result) => set(() => ({ result })),
+
+  correctAnswers: 0,
+  setCorrectAnswers: (result) => set(() => ({ result })),
 }));
 
 export default useStore;

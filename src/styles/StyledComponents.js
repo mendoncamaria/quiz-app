@@ -106,3 +106,21 @@ export const PreviewAnswer = styled.span`
   margin-top: 0;
   color: #691249;
 `;
+export const BackButton = styled.button`
+  // background-image: linear-gradient(to right, #9d176c, #a77da4);
+  color: #9d176c;
+  border: 1px solid #9d176c;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+`;
+export const PreviewMessage = styled.p`
+  font-size: 35px;
+  text-align: center;
+  margin: 20px 0;
+  color: #9d176c;
+  font-weight: bold;
+`;
