@@ -28,5 +28,5 @@ Do credit me if you plan to use this project.
 2. Run `npm install` to install all dependencies
 3. Run `npm run dev`
 
-<br>
+<hr />
 <center>&copy; Maria Mendonca</center>
