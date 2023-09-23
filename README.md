@@ -1,21 +1,32 @@
-# React + Vite
+# Quiz Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website is particularly built as a part of my Learning Vite and initializing ReactJS Application.
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Overview:
+You will be having 10 questions. Each question Will have 4 options. On selecting option, you will be able to able to go to next question.
+Once 10 questions are done, you will be able to preview and edit it.
+
+### Tech Stack
+ReactJS + Vite
+
+### External Libraries
+1. styled-components: For styling the components and page
+2. zustand: For storing values
+
+### Deployment Platform
+Vercel
 
 
-
-first npm i
-
-
-then to run,
-npm run dev
+## Note:
+Do credit me if you plan to use this project.
 
 
-installed styled-components
-zustand
-react-dom
+## Steps to Install
+1. Clone the project
+2. Run `npm install` to install all dependencies
+3. Run `npm run dev`
+
+<br>
+<center>&copy; Maria Mendonca</center>
