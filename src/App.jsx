@@ -1,5 +1,10 @@
 import Quiz from './container/Quiz';
-import { Container, QuizMainHeading } from './styles/StyledComponents';
+import {
+  Container,
+  Footer,
+  FooterLink,
+  QuizMainHeading,
+} from './styles/StyledComponents';
 
 function App() {
   return (
@@ -8,17 +13,15 @@ function App() {
         <QuizMainHeading>Quiz Application</QuizMainHeading>
         <Quiz />
       </Container>
-      <footer
-        style={{
-          backgroundColor: 'black',
-          color: 'white',
-          textAlign: 'center',
-          padding: '1rem',
-          // height: '2rem',
-        }}
-      >
-        &copy; 2023 Maria Mendonca
-      </footer>
+      <Footer>
+        &copy; 2023{' '}
+        <FooterLink
+          href="https://maria-mendonca.vercel.app/"
+          target="_self"
+        >
+          Maria Mendonca
+        </FooterLink>
+      </Footer>
     </>
   );
 }
