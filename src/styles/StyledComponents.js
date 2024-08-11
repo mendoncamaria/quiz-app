@@ -73,6 +73,7 @@ export const QuizCompletedMessage = styled.p`
   color: #9d176c;
   font-weight: bold;
 `;
+
 export const QuizMainHeading = styled.p`
   font-size: 40px;
   text-align: center;
@@ -100,14 +101,15 @@ export const PreviewQuestion = styled.p`
   margin-top: 0;
   color: #691249;
 `;
+
 export const PreviewAnswer = styled.span`
   font-size: 20px;
   font-weight: 400;
   margin-top: 0;
   color: #691249;
 `;
+
 export const BackButton = styled.button`
-  // background-image: linear-gradient(to right, #9d176c, #a77da4);
   color: #9d176c;
   border: 1px solid #9d176c;
   padding: 10px 20px;
@@ -117,6 +119,7 @@ export const BackButton = styled.button`
   margin-top: 20px;
   transition: background-color 0.3s ease-in-out;
 `;
+
 export const PreviewMessage = styled.p`
   font-size: 35px;
   text-align: center;
@@ -124,6 +127,7 @@ export const PreviewMessage = styled.p`
   color: #9d176c;
   font-weight: bold;
 `;
+
 export const ButtonContainer = styled.div`
   display: flex;
   gap: 1rem;
@@ -135,7 +139,15 @@ export const CurrentQuestion = styled.p`
   color: #ddbdd5;
   margin: 0;
 `;
+
 export const CurrentQuestionDark = styled.span`
   font-size: 50px;
   color: #9d176c;
+`;
+
+export const Footer = styled.footer`
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 `;
