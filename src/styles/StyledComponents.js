@@ -151,3 +151,8 @@ export const Footer = styled.footer`
   text-align: center;
   padding: 1rem;
 `;
+
+export const FooterLink = styled.a`
+  text-decoration: none;
+  color: white;
+`;
