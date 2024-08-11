@@ -91,7 +91,7 @@ export const Score = styled.p`
 
 export const Container = styled.div`
   background-image: linear-gradient(to right, #e2229c, #dfb9dc);
-  height: 100vh;
+  height: calc(100vh - 3.1rem);
 `;
 
 export const PreviewQuestion = styled.p`
