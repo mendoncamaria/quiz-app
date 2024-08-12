@@ -7,26 +7,26 @@ import QuizForm from './QuizForm';
 const Quiz = () => {
   const {
     computerQuestions,
-    // animalQuestions,
+    animalQuestions,
     currentQuestionIndex,
     selectedAnswer,
     nextQuestion,
     selectAnswer,
     setCurrentQuestionIndex,
   } = useStore();
-// 
-  // const category = [
-  //   {
-  //     id: 1,
-  //     categoryValue: 'Computer',
-  //     options: computerQuestions,
-  //   },
-  //   {
-  //     id: 2,
-  //     categoryValue: 'Animals',
-  //     options: animalQuestions,
-  //   },
-  // ];
+
+  const category = [
+    {
+      id: 1,
+      categoryValue: 'Computer',
+      options: computerQuestions,
+    },
+    {
+      id: 2,
+      categoryValue: 'Animals',
+      options: animalQuestions,
+    },
+  ];
 
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showQuestions, setShowQuestions] = useState(false); // Initialize to false
@@ -65,7 +65,7 @@ const Quiz = () => {
       ) : (
         <QuizForm
           isStart
-          // category={category}
+          category={category}
           onAnswerClick={(option) => handleAnswerClick(option)}
           onButtonClick={handleNextButtonClick}
           currentQuestion={currentQuestion}

@@ -216,8 +216,8 @@ const useStore = create((set) => ({
   correctAnswers: 0,
   setCorrectAnswers: (result) => set(() => ({ result })),
 
-  // selectedCategory: null,
-  // setSelectedCategory: (category) => set(() => ({ category })),
+  selectedCategory: null,
+  setSelectedCategory: (category) => set(() => ({ category })),
 }));
 
 export default useStore;
