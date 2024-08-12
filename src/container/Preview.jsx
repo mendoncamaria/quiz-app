@@ -17,7 +17,7 @@ export const PreviewPage = ({
   totalQuestions,
   onBackButtonClick,
 }) => {
-  const { questions, selectedAnswers, result, setResult } = useStore();
+  const { computerQuestions, selectedAnswers, result, setResult } = useStore();
 
   return result ? (
     <>
@@ -33,7 +33,7 @@ export const PreviewPage = ({
         PREVIEW RESULTS BEFORE SUBMITTING
       </PreviewMessage>
       <Score>
-        {questions.map((question, index) => (
+        {computerQuestions.map((question, index) => (
           <PreviewQuestion key={question.id}>
             {question.question}: {'   '}
             <PreviewAnswer>{selectedAnswers[index]}</PreviewAnswer>

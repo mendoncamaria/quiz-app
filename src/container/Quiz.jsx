@@ -1,31 +1,36 @@
 import { useState } from 'react';
 import useStore from '../data/store';
-import {
-  QuizContainer,
-  Question,
-  OptionsList,
-  OptionItem,
-  NextButton,
-  ButtonContainer,
-  CurrentQuestion,
-  CurrentQuestionDark,
-} from '../styles/StyledComponents';
+import { QuizContainer } from '../styles/StyledComponents';
 import { PreviewPage } from './Preview';
+import QuizForm from './QuizForm';
 
 const Quiz = () => {
   const {
-    questions,
+    computerQuestions,
+    animalQuestions,
     currentQuestionIndex,
     selectedAnswer,
     nextQuestion,
     selectAnswer,
     setCurrentQuestionIndex,
-    selectedAnswers,
   } = useStore();
+
+  const category = [
+    {
+      id: 1,
+      categoryValue: 'Computer',
+      options: computerQuestions,
+    },
+    {
+      id: 2,
+      categoryValue: 'Animals',
+      options: animalQuestions,
+    },
+  ];
 
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showQuestions, setShowQuestions] = useState(false); // Initialize to false
-  const currentQuestion = questions[currentQuestionIndex];
+  const currentQuestion = computerQuestions[currentQuestionIndex];
 
   const handleAnswerClick = (answer) => {
     selectAnswer(answer);
@@ -36,7 +41,7 @@ const Quiz = () => {
       setCorrectAnswers((prevCorrectAnswers) => prevCorrectAnswers + 1);
     }
 
-    if (currentQuestionIndex + 1 === questions.length) {
+    if (currentQuestionIndex + 1 === computerQuestions.length) {
       // If all questions are answered, show the preview
       setShowQuestions(true);
     } else {
@@ -44,61 +49,27 @@ const Quiz = () => {
     }
   };
 
-  // const isQuizCompleted = currentQuestionIndex >= questions.length;
-
   const handlePreviewButtonClick = () => {
-    setShowQuestions(false); // Set showQuestions to true when preview button is clicked
+    setShowQuestions(false); //* Set showQuestions to true when preview button is clicked
     setCurrentQuestionIndex(0);
   };
 
   return (
     <QuizContainer>
       {showQuestions ? (
-        <>
-          <PreviewPage
-            correctAnswers={correctAnswers}
-            totalQuestions={questions.length}
-            onBackButtonClick={handlePreviewButtonClick}
-          />
-        </>
+        <PreviewPage
+          correctAnswers={correctAnswers}
+          totalQuestions={computerQuestions.length}
+          onBackButtonClick={handlePreviewButtonClick}
+        />
       ) : (
-        <>
-          <CurrentQuestion>
-            <CurrentQuestionDark>
-              {currentQuestionIndex + 1 <= 9
-                ? `0${currentQuestionIndex + 1}`
-                : currentQuestionIndex + 1}
-            </CurrentQuestionDark>
-            /{questions.length}
-          </CurrentQuestion>
-          <>
-            <Question>{currentQuestion.question}</Question>
-            <OptionsList>
-              {currentQuestion.options.map((option) => (
-                <OptionItem
-                  key={option}
-                  onClick={() => handleAnswerClick(option)}
-                  selected={
-                    selectedAnswers[currentQuestionIndex] === option ??
-                    selectedAnswer === option
-                  }
-                >
-                  {option}
-                </OptionItem>
-              ))}
-            </OptionsList>
-          </>
-          <ButtonContainer>
-            <NextButton
-              onClick={handleNextButtonClick}
-              disabled={
-                !selectedAnswer && !selectedAnswers[currentQuestionIndex]
-              }
-            >
-              NEXT
-            </NextButton>
-          </ButtonContainer>
-        </>
+        <QuizForm
+          isStart
+          category={category}
+          onAnswerClick={(option) => handleAnswerClick(option)}
+          onButtonClick={handleNextButtonClick}
+          currentQuestion={currentQuestion}
+        />
       )}
     </QuizContainer>
   );
