@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import useStore from '../data/store';
 import { QuizContainer } from '../styles/StyledComponents';
 import { PreviewPage } from './Preview';
 import QuizForm from './QuizForm';
+import { Animal, Cinema, Computer, Fashion, Food } from '../data/quesnans';
 
 const Quiz = () => {
   const {
-    computerQuestions,
-    animalQuestions,
     currentQuestionIndex,
     selectedAnswer,
     nextQuestion,
@@ -19,18 +18,34 @@ const Quiz = () => {
     {
       id: 1,
       categoryValue: 'Computer',
-      options: computerQuestions,
+      options: Computer,
     },
     {
       id: 2,
       categoryValue: 'Animals',
-      options: animalQuestions,
+      options: Animal,
+    },
+    {
+      id: 3,
+      categoryValue: 'Fashion',
+      options: Fashion,
+    },
+    {
+      id: 4,
+      categoryValue: 'Food',
+      options: Food,
+    },
+    {
+      id: 5,
+      categoryValue: 'Cinema',
+      options: Cinema,
     },
   ];
-
+  const getCurrentQuestionSet = useRef('');
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showQuestions, setShowQuestions] = useState(false); // Initialize to false
-  const currentQuestion = computerQuestions[currentQuestionIndex];
+  const [isStart, setIsStart] = useState(true); // Initialize to false
+  const currentQuestion = getCurrentQuestionSet.current[currentQuestionIndex];
 
   const handleAnswerClick = (answer) => {
     selectAnswer(answer);
@@ -41,8 +56,8 @@ const Quiz = () => {
       setCorrectAnswers((prevCorrectAnswers) => prevCorrectAnswers + 1);
     }
 
-    if (currentQuestionIndex + 1 === computerQuestions.length) {
-      // If all questions are answered, show the preview
+    // if (currentQuestionIndex + 1 === Computer.length) {
+    if (currentQuestionIndex + 1 === 10) {
       setShowQuestions(true);
     } else {
       nextQuestion();
@@ -54,21 +69,33 @@ const Quiz = () => {
     setCurrentQuestionIndex(0);
   };
 
+  const getSelectedCategory = (selectedCategory) => {
+    // Access and process the selected category object here
+    console.log('Selected category:', selectedCategory);
+    getCurrentQuestionSet.current = selectedCategory.options;
+    setIsStart(false);
+  };
+
   return (
     <QuizContainer>
       {showQuestions ? (
-        <PreviewPage
-          correctAnswers={correctAnswers}
-          totalQuestions={computerQuestions.length}
-          onBackButtonClick={handlePreviewButtonClick}
-        />
+        
+          <PreviewPage
+            correctAnswers={correctAnswers}
+            totalQuestions={getCurrentQuestionSet.current.length}
+            onBackButtonClick={handlePreviewButtonClick}
+            currentQuestion={currentQuestion}
+            questionList={getCurrentQuestionSet.current}
+          />  
       ) : (
         <QuizForm
-          isStart
+          isStart={isStart}
           category={category}
+          onCategorySelect={getSelectedCategory}
           onAnswerClick={(option) => handleAnswerClick(option)}
           onButtonClick={handleNextButtonClick}
           currentQuestion={currentQuestion}
+          totalQuestions={getCurrentQuestionSet.current.length}
         />
       )}
     </QuizContainer>
