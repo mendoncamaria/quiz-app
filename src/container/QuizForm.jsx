@@ -1,4 +1,3 @@
-// import { Computer } from '../data/quesnans';
 import useStore from '../data/store';
 import {
   Question,
