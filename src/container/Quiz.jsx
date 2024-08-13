@@ -56,7 +56,6 @@ const Quiz = () => {
       setCorrectAnswers((prevCorrectAnswers) => prevCorrectAnswers + 1);
     }
 
-    // if (currentQuestionIndex + 1 === Computer.length) {
     if (currentQuestionIndex + 1 === 10) {
       setShowQuestions(true);
     } else {
@@ -70,8 +69,6 @@ const Quiz = () => {
   };
 
   const getSelectedCategory = (selectedCategory) => {
-    // Access and process the selected category object here
-    console.log('Selected category:', selectedCategory);
     getCurrentQuestionSet.current = selectedCategory.options;
     setIsStart(false);
   };
