@@ -16,8 +16,9 @@ export const PreviewPage = ({
   correctAnswers,
   totalQuestions,
   onBackButtonClick,
+  questionList,
 }) => {
-  const { computerQuestions, selectedAnswers, result, setResult } = useStore();
+  const { selectedAnswers, result, setResult } = useStore();
 
   return result ? (
     <>
@@ -29,11 +30,9 @@ export const PreviewPage = ({
     </>
   ) : (
     <>
-      <PreviewMessage>
-        PREVIEW RESULTS BEFORE SUBMITTING
-      </PreviewMessage>
+      <PreviewMessage>PREVIEW RESULTS BEFORE SUBMITTING</PreviewMessage>
       <Score>
-        {computerQuestions.map((question, index) => (
+        {questionList.map((question, index) => (
           <PreviewQuestion key={question.id}>
             {question.question}: {'   '}
             <PreviewAnswer>{selectedAnswers[index]}</PreviewAnswer>
@@ -50,6 +49,12 @@ export const PreviewPage = ({
 
 PreviewPage.propTypes = {
   correctAnswers: PropTypes.any,
+  currentQuestion: PropTypes.shape({
+    map: PropTypes.func,
+  }),
   onBackButtonClick: PropTypes.any,
-  totalQuestions: PropTypes.any
-}
+  questionList: PropTypes.shape({
+    map: PropTypes.func,
+  }),
+  totalQuestions: PropTypes.any,
+};
