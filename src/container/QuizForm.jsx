@@ -1,3 +1,4 @@
+// import { Computer } from '../data/quesnans';
 import useStore from '../data/store';
 import {
   Question,
@@ -17,25 +18,24 @@ function QuizForm({
   currentQuestion,
   isStart,
   category,
+  onCategorySelect,
+  totalQuestions,
 }) {
-
   const {
-    computerQuestions,
+    // computerQuestions,
     currentQuestionIndex,
     selectedAnswer,
     selectedAnswers,
   } = useStore();
-
-const selectCategory = () => {
-    
-}
 
   return (
     <>
       {isStart ? (
         <div>
           {category.map((item) => (
-            <button key={item.id} onClick={selectCategory}>{item.categoryValue}</button>
+            <button key={item.id} onClick={() => onCategorySelect(item)}>
+              {item.categoryValue}
+            </button>
           ))}
         </div>
       ) : (
@@ -46,7 +46,7 @@ const selectCategory = () => {
                 ? `0${currentQuestionIndex + 1}`
                 : currentQuestionIndex + 1}
             </CurrentQuestionDark>
-            /{computerQuestions.length}
+            /{totalQuestions}
           </CurrentQuestion>
           <>
             <Question>{currentQuestion.question}</Question>
@@ -82,16 +82,16 @@ const selectCategory = () => {
 }
 
 QuizForm.propTypes = {
-  category: PropTypes.any,
+  category: PropTypes.array,
   currentQuestion: PropTypes.shape({
-    options: PropTypes.shape({
-      map: PropTypes.func,
-    }),
+    options: PropTypes.array,
     question: PropTypes.any,
   }),
+  isStart: PropTypes.bool,
   onAnswerClick: PropTypes.func,
   onButtonClick: PropTypes.any,
-  isStart: PropTypes.any,
+  onCategorySelect: PropTypes.func,
+  totalQuestions: PropTypes.any,
 };
 
 export default QuizForm;
