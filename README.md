@@ -21,13 +21,15 @@ Vercel
 ## Note:
 Do credit me if you plan to use this project. 
 
-### Improvements can be done(strikes are done):
+### UI Improvements can be done(strikes are done):
 1. <p><s>Added Footer</s></p>
 2. <p><s>Add anchor to Footer name and redirect to Portfolio</s></p>
-3. <p>In the end, show answers to Users to make them aware of right or wrong answers</p>
-4. <p><s>Add new Category for the quiz</s></p>
+3. <p><s>Add new Category for the quiz</s></p>
+4. <p>In the end, show answers to Users to make them aware of right or wrong answers</p>
 5. <p>Update Background, add relevant images</p>
 6. <p>Make Quiz Dynamic, jumble questions</p>
+7. <p>Add Back and Next Button during the quiz</p>
+8. <p>Add quiz instructions in the beginning</p>
 
 ## Steps to Install
 1. Clone the project
