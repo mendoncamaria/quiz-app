@@ -11,8 +11,8 @@ function App() {
     <>
       <Container>
         <QuizMainHeading>Quiz Application</QuizMainHeading>
-        <QuizMainHeading>WORK IN PROGRESS</QuizMainHeading>
-        {/* <Quiz /> */}
+        {/* <QuizMainHeading>WORK IN PROGRESS</QuizMainHeading> */}
+        <Quiz />
       </Container>
       <Footer>
         &copy; 2023{' '}
