@@ -7,6 +7,8 @@ import {
   ButtonContainer,
   CurrentQuestion,
   CurrentQuestionDark,
+  OptionButton,
+  ButtonGap,
 } from '../styles/StyledComponents';
 
 import PropTypes from 'prop-types';
@@ -31,11 +33,17 @@ function QuizForm({
     <>
       {isStart ? (
         <div>
-          {category.map((item) => (
-            <button key={item.id} onClick={() => onCategorySelect(item)}>
-              {item.categoryValue}
-            </button>
-          ))}
+          <Question>Select a Category to proceed</Question>
+          <ButtonGap>
+            {category.map((item) => (
+              <OptionButton
+                key={item.id}
+                onClick={() => onCategorySelect(item)}
+              >
+                {item.categoryValue}
+              </OptionButton>
+            ))}
+          </ButtonGap>
         </div>
       ) : (
         <>

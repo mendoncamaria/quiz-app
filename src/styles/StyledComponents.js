@@ -91,8 +91,8 @@ export const Score = styled.p`
 `;
 
 export const Container = styled.div`
-  background-image: linear-gradient(to right, #e2229c, #dfb9dc);
-  height: calc(100vh - 3.1rem);
+  background-image: linear-gradient(to left, #ff24b0, #e5c9e2);
+  min-height: calc(100vh - 3.1rem);
 `;
 
 export const PreviewQuestion = styled.p`
@@ -155,4 +155,28 @@ export const Footer = styled.footer`
 export const FooterLink = styled.a`
   text-decoration: none;
   color: white;
+`;
+
+export const ButtonGap = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+export const OptionButton = styled.button`
+  background-image: linear-gradient(to right, #178a9d, #7da7a0);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
 `;
