@@ -5,8 +5,8 @@ This website is particularly built as a part of my Learning Vite and initializin
 ## About the Project
 
 ### Overview:
-You will be having 10 questions. Each question Will have 4 options. On selecting the option, you will be able to go to the next question.
-Once 10 questions are done, you will be able to preview and edit them.
+You will be having 10 questions. Each question Will have 4 options. On selecting the option, you can go to the next question.
+Once 10 questions are done, you can preview and edit them.
 
 ### Tech Stack
 ReactJS + Vite
@@ -27,6 +27,7 @@ Do credit me if you plan to use this project.
 3. <p>In the end, show answers to Users to make them aware of right or wrong answers</p>
 4. <p><s>Add new Category for the quiz</s></p>
 5. <p>Update Background, add relevant images</p>
+6. <p>Make Quiz Dynamic, jumble questions</p>
 
 ## Steps to Install
 1. Clone the project
