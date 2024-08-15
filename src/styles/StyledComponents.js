@@ -1,5 +1,34 @@
 import styled from 'styled-components';
 
+//* App.jsx style starts
+export const Container = styled.div`
+  background-image: linear-gradient(to left, #ff24b0, #e5c9e2);
+  min-height: calc(100vh - 3.1rem);
+`;
+
+export const QuizMainHeading = styled.p`
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+  color: #000;
+  font-weight: bold;
+  padding: 2rem 0;
+`;
+
+export const Footer = styled.footer`
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+`;
+
+export const FooterLink = styled.a`
+  text-decoration: none;
+  color: white;
+`;
+//* App.jsx style ends
+
+//* Quiz.jsx style starts
 export const QuizContainer = styled.div`
   max-width: 60%;
   margin: 0 auto;
@@ -15,7 +44,9 @@ export const QuizContainer = styled.div`
     max-width: 40%;
   }
 `;
+//* Quiz.jsx style ends
 
+//* QuizForm.jsx style starts
 export const Question = styled.h2`
   font-size: 24px;
   margin: 0;
@@ -66,6 +97,43 @@ export const NextButton = styled.button`
   }
 `;
 
+export const CurrentQuestion = styled.p`
+  font-size: 30px;
+  color: #ddbdd5;
+  margin: 0;
+`;
+
+export const CurrentQuestionDark = styled.span`
+  font-size: 50px;
+  color: #9d176c;
+`;
+
+export const ButtonGap = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+export const OptionButton = styled.button`
+  background-image: linear-gradient(to right, #178a9d, #7da7a0);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+`;
+//* QuizForm.jsx style ends
+
+//* Preview.jsx style starts
 export const QuizCompletedMessage = styled.p`
   font-size: 40px;
   text-align: center;
@@ -74,25 +142,11 @@ export const QuizCompletedMessage = styled.p`
   font-weight: bold;
 `;
 
-export const QuizMainHeading = styled.p`
-  font-size: 40px;
-  text-align: center;
-  margin: 0;
-  color: #000;
-  font-weight: bold;
-  padding: 2rem 0;
-`;
-
 export const Score = styled.p`
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
   color: #691249;
-`;
-
-export const Container = styled.div`
-  background-image: linear-gradient(to left, #ff24b0, #e5c9e2);
-  min-height: calc(100vh - 3.1rem);
 `;
 
 export const PreviewQuestion = styled.p`
@@ -133,50 +187,4 @@ export const ButtonContainer = styled.div`
   gap: 1rem;
   justify-content: center;
 `;
-
-export const CurrentQuestion = styled.p`
-  font-size: 30px;
-  color: #ddbdd5;
-  margin: 0;
-`;
-
-export const CurrentQuestionDark = styled.span`
-  font-size: 50px;
-  color: #9d176c;
-`;
-
-export const Footer = styled.footer`
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-`;
-
-export const FooterLink = styled.a`
-  text-decoration: none;
-  color: white;
-`;
-
-export const ButtonGap = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: center;
-
-  @media (max-width: 650px) {
-    flex-direction: column;
-    gap: 1rem;
-  }
-`;
-
-export const OptionButton = styled.button`
-  background-image: linear-gradient(to right, #178a9d, #7da7a0);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease-in-out;
-`;
+//* Preview.jsx style ends
