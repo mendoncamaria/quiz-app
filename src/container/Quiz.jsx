@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
+
 import useStore from '../data/store';
 import { QuizContainer } from '../styles/StyledComponents';
+
 import { PreviewPage } from './Preview';
 import QuizForm from './QuizForm';
-import { Animal, Cinema, Computer, Fashion, Food } from '../data/quesnans';
 
 const Quiz = () => {
   const {
@@ -14,42 +15,15 @@ const Quiz = () => {
     setCurrentQuestionIndex,
   } = useStore();
 
-  const category = [
-    {
-      id: 1,
-      categoryValue: 'Computer',
-      options: Computer,
-    },
-    {
-      id: 2,
-      categoryValue: 'Animals',
-      options: Animal,
-    },
-    {
-      id: 3,
-      categoryValue: 'Fashion',
-      options: Fashion,
-    },
-    {
-      id: 4,
-      categoryValue: 'Food',
-      options: Food,
-    },
-    {
-      id: 5,
-      categoryValue: 'Cinema',
-      options: Cinema,
-    },
-  ];
   const getCurrentQuestionSet = useRef('');
+
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [showQuestions, setShowQuestions] = useState(false); // Initialize to false
-  const [isStart, setIsStart] = useState(true); // Initialize to false
+  const [showQuestions, setShowQuestions] = useState(false);
+  const [isStart, setIsStart] = useState(true);
+
   const currentQuestion = getCurrentQuestionSet.current[currentQuestionIndex];
 
-  const handleAnswerClick = (answer) => {
-    selectAnswer(answer);
-  };
+  const handleAnswerClick = (answer) => selectAnswer(answer);
 
   const handleNextButtonClick = () => {
     if (currentQuestion && currentQuestion.correctAnswer === selectedAnswer) {
@@ -64,7 +38,7 @@ const Quiz = () => {
   };
 
   const handlePreviewButtonClick = () => {
-    setShowQuestions(false); //* Set showQuestions to true when preview button is clicked
+    setShowQuestions(false);
     setCurrentQuestionIndex(0);
   };
 
@@ -76,18 +50,16 @@ const Quiz = () => {
   return (
     <QuizContainer>
       {showQuestions ? (
-        
-          <PreviewPage
-            correctAnswers={correctAnswers}
-            totalQuestions={getCurrentQuestionSet.current.length}
-            onBackButtonClick={handlePreviewButtonClick}
-            currentQuestion={currentQuestion}
-            questionList={getCurrentQuestionSet.current}
-          />  
+        <PreviewPage
+          correctAnswers={correctAnswers}
+          totalQuestions={getCurrentQuestionSet.current.length}
+          onBackButtonClick={handlePreviewButtonClick}
+          currentQuestion={currentQuestion}
+          questionList={getCurrentQuestionSet.current}
+        />
       ) : (
         <QuizForm
           isStart={isStart}
-          category={category}
           onCategorySelect={getSelectedCategory}
           onAnswerClick={(option) => handleAnswerClick(option)}
           onButtonClick={handleNextButtonClick}
