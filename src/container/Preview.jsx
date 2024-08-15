@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { getRemarks } from '../helpers/utils';
 import {
   BackButton,
@@ -11,6 +12,7 @@ import {
   Score,
 } from '../styles/StyledComponents';
 import useStore from '../data/store';
+import TEXT_CONSTANTS from '../data/textConstants';
 
 export const PreviewPage = ({
   correctAnswers,
@@ -20,17 +22,51 @@ export const PreviewPage = ({
 }) => {
   const { selectedAnswers, result, setResult } = useStore();
 
+  // const remarksArray = [
+  //   {
+  //     title: TEXT_CONSTANTS.TOTAL_QUESTIONS,
+  //     value: totalQuestions,
+  //   },
+  //   {
+  //     title: TEXT_CONSTANTS.CORRECT_ANSWERS,
+  //     value: correctAnswers,
+  //   },
+  //   {
+  //     title: TEXT_CONSTANTS.WRONG_ANSWERS,
+  //     value: totalQuestions - correctAnswers,
+  //   },
+  //   {
+  //     title: TEXT_CONSTANTS.REMARKS,
+  //     value: getRemarks(totalQuestions, correctAnswers),
+  //   },
+  // ];
+
   return result ? (
     <>
-      <QuizCompletedMessage>RESULT</QuizCompletedMessage>
-      <Score>Total Questions: {totalQuestions}</Score>
-      <Score>Correct Answers: {correctAnswers}</Score>
-      <Score>Wrong Answers: {totalQuestions - correctAnswers}</Score>
-      <Score>Remarks: {getRemarks(totalQuestions, correctAnswers)}</Score>
+      <QuizCompletedMessage>
+        {TEXT_CONSTANTS.RESULT_HEADER}{' '}
+      </QuizCompletedMessage>
+      {/* {remarksArray.map((item)=> (
+        <Score key={item.title}>
+          {item.title}{item.value}
+      </Score>
+      ))} */}
+      <Score>
+        {TEXT_CONSTANTS.TOTAL_QUESTIONS} {totalQuestions}
+      </Score>
+      <Score>
+        {TEXT_CONSTANTS.CORRECT_ANSWERS} {correctAnswers}
+      </Score>
+      <Score>
+        {TEXT_CONSTANTS.WRONG_ANSWERS} {totalQuestions - correctAnswers}
+      </Score>
+      <Score>
+        {TEXT_CONSTANTS.REMARKS} {getRemarks(totalQuestions, correctAnswers)}
+      </Score>
     </>
   ) : (
     <>
-      <PreviewMessage>PREVIEW RESULTS BEFORE SUBMITTING</PreviewMessage>
+      <PreviewMessage>{TEXT_CONSTANTS.PREVIEW_HEADER}</PreviewMessage>
       <Score>
         {questionList.map((question, index) => (
           <PreviewQuestion key={question.id}>
@@ -40,8 +76,12 @@ export const PreviewPage = ({
         ))}
       </Score>
       <ButtonContainer>
-        <NextButton onClick={() => setResult(true)}>NEXT</NextButton>
-        <BackButton onClick={onBackButtonClick}>BACK</BackButton>
+        <NextButton onClick={() => setResult(true)}>
+          {TEXT_CONSTANTS.NEXT}
+        </NextButton>
+        <BackButton onClick={onBackButtonClick}>
+          {TEXT_CONSTANTS.BACK}
+        </BackButton>
       </ButtonContainer>
     </>
   );

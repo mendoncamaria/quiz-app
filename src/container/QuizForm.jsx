@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import useStore from '../data/store';
 import {
   Question,
@@ -10,20 +12,19 @@ import {
   OptionButton,
   ButtonGap,
 } from '../styles/StyledComponents';
+import { QuestionCategory } from '../data/quesnans';
+import TEXT_CONSTANTS from '../data/textConstants';
 
-import PropTypes from 'prop-types';
 
 function QuizForm({
   onAnswerClick,
   onButtonClick,
   currentQuestion,
   isStart,
-  category,
   onCategorySelect,
   totalQuestions,
 }) {
   const {
-    // computerQuestions,
     currentQuestionIndex,
     selectedAnswer,
     selectedAnswers,
@@ -33,9 +34,9 @@ function QuizForm({
     <>
       {isStart ? (
         <div>
-          <Question>Select a Category to proceed</Question>
+          <Question>{TEXT_CONSTANTS.HOME_HEADER}</Question>
           <ButtonGap>
-            {category.map((item) => (
+            {QuestionCategory.map((item) => (
               <OptionButton
                 key={item.id}
                 onClick={() => onCategorySelect(item)}
@@ -79,7 +80,7 @@ function QuizForm({
                 !selectedAnswer && !selectedAnswers[currentQuestionIndex]
               }
             >
-              NEXT
+              {TEXT_CONSTANTS.NEXT}
             </NextButton>
           </ButtonContainer>
         </>
@@ -89,7 +90,6 @@ function QuizForm({
 }
 
 QuizForm.propTypes = {
-  category: PropTypes.array,
   currentQuestion: PropTypes.shape({
     options: PropTypes.array,
     question: PropTypes.any,

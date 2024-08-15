@@ -400,3 +400,31 @@ export const Cinema = [
     correctAnswer: 'Priyanka Chopra',
   },
 ];
+
+export const QuestionCategory = [
+  {
+    id: 1,
+    categoryValue: 'Computer',
+    options: Computer,
+  },
+  {
+    id: 2,
+    categoryValue: 'Animals',
+    options: Animal,
+  },
+  {
+    id: 3,
+    categoryValue: 'Fashion',
+    options: Fashion,
+  },
+  {
+    id: 4,
+    categoryValue: 'Food',
+    options: Food,
+  },
+  {
+    id: 5,
+    categoryValue: 'Cinema',
+    options: Cinema,
+  },
+];
