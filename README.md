@@ -1,5 +1,3 @@
-This is a great start to your README\! To incorporate developmental phases, we can organize the "UI Improvements" section into a roadmap. This will clearly show the progress and future plans for your project. How about we structure it like this?
-
 # Quiz Website
 
 This website is particularly built as a part of my Learning Vite and initializing ReactJS Application.
