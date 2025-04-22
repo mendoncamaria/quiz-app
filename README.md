@@ -38,9 +38,12 @@ This section outlines the planned developmental phases and completed features.
   - [x] Add new Category for the quiz
   - [ ] In the end, show answers to Users to make them aware of right or wrong answers
   - [ ] Update Background, add relevant images
+  - [ ] Add quiz instructions in the beginning
+
+### Phase 3: Functionality Enhancements (Planned)
+
   - [ ] Make Quiz Dynamic, jumble questions
   - [ ] Add Back and Next Button during the quiz
-  - [ ] Add quiz instructions in the beginning
 
 ## Note:
 
