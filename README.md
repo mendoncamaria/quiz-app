@@ -55,5 +55,5 @@ Please credit me if you plan to use this project.
 2.  Install dependencies: `npm install`
 3.  Run the development server: `npm run dev`
 
-\<hr /\>
-\<center\>\&copy; Maria Mendonca\</center\>
+<hr /\>
+<center>&copy; Maria Mendonca</center>
