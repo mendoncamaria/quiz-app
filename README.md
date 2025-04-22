@@ -1,3 +1,5 @@
+This is a great start to your README\! To incorporate developmental phases, we can organize the "UI Improvements" section into a roadmap. This will clearly show the progress and future plans for your project. How about we structure it like this?
+
 # Quiz Website
 
 This website is particularly built as a part of my Learning Vite and initializing ReactJS Application.
@@ -5,36 +7,52 @@ This website is particularly built as a part of my Learning Vite and initializin
 ## About the Project
 
 ### Overview:
-You will be having 10 questions. Each question Will have 4 options. On selecting the option, you can go to the next question.
-Once 10 questions are done, you can preview and edit them.
+
+You will be presented with 10 questions, each with 4 options. After selecting an option, you can proceed to the next question. Once you've answered all 10 questions, you'll have the opportunity to review and edit your responses.
 
 ### Tech Stack
+
 ReactJS + Vite
 
 ### External Libraries
-1. styled-components: For styling the components and page
-2. zustand: For storing values
+
+1.  `styled-components`: For styling the components and page
+2.  `zustand`: For managing the application state
 
 ### Deployment Platform
+
 Vercel
 
-## Note:
-Do credit me if you plan to use this project. 
+## Development Roadmap
 
-### UI Improvements can be done(strikes are done):
-1. <p><s>Added Footer</s></p>
-2. <p><s>Add anchor to Footer name and redirect to Portfolio</s></p>
-3. <p><s>Add new Category for the quiz</s></p>
-4. <p>In the end, show answers to Users to make them aware of right or wrong answers</p>
-5. <p>Update Background, add relevant images</p>
-6. <p>Make Quiz Dynamic, jumble questions</p>
-7. <p>Add Back and Next Button during the quiz</p>
-8. <p>Add quiz instructions in the beginning</p>
+This section outlines the planned developmental phases and completed features.
+
+### Phase 1: Core Functionality (Completed)
+
+  - Basic quiz structure with 10 questions and 4 options per question.
+  - Navigation between questions.
+  - Ability to review and edit answers after completion.
+
+### Phase 2: UI Enhancements (In Progress/Planned)
+
+  - [x] Added Footer
+  - [x] Add anchor to Footer name and redirect to Portfolio
+  - [x] Add new Category for the quiz
+  - [ ] In the end, show answers to Users to make them aware of right or wrong answers
+  - [ ] Update Background, add relevant images
+  - [ ] Make Quiz Dynamic, jumble questions
+  - [ ] Add Back and Next Button during the quiz
+  - [ ] Add quiz instructions in the beginning
+
+## Note:
+
+Please credit me if you plan to use this project.
 
 ## Steps to Install
-1. Clone the project
-2. Run `npm install` to install all dependencies
-3. Run `npm run dev`
 
-<hr />
-<center>&copy; Maria Mendonca</center>
+1.  Clone the project: `git clone <your-repository-url>`
+2.  Install dependencies: `npm install`
+3.  Run the development server: `npm run dev`
+
+\<hr /\>
+\<center\>\&copy; Maria Mendonca\</center\>
