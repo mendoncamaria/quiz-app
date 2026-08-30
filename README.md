@@ -1,59 +1,39 @@
-# Quiz Website
+# 📦 <font color="red">[ARCHIVED]</font> MULTIPLE CHOICE QUIZ APP
 
-This website is particularly built as a part of my Learning Vite and initializing ReactJS Application.
+> **Status:** <font color="red">🔴 <b>Archived / Read-Only</b></font>
+> Built as an exercise to learn Vite and ReactJS app initialization. This repository is preserved as a historical snapshot and is no longer maintained.
 
-## About the Project
+---
 
-### Overview:
+## 🛠️ Tech Stack
 
-You will be presented with 10 questions, each with 4 options. After selecting an option, you can proceed to the next question. Once you've answered all 10 questions, you'll have the opportunity to review and edit your responses.
+* **Framework & Build Tool:** ReactJS + Vite
+* **State Management:** zustand
+* **Styling:** styled-components
+* **Deployment Platform:** Vercel
 
-### Tech Stack
+---
 
-ReactJS + Vite
+## ✨ Core Features
 
-### External Libraries
+* **Category Selection:** Choose from multiple topics (Computer, Animals, Fashion, Food, Cinema).
+* **Quiz Structure:** 10 questions per quiz session with 4 options per question.
+* **Interactive Navigation:** Move between questions during the test.
+* **Review System:** Ability to review and edit responses after answering all 10 questions.
 
-1.  `styled-components`: For styling the components and page
-2.  `zustand`: For managing the application state
+---
 
-### Deployment Platform
+## 💻 Local Development Setup
 
-Vercel
+<font color="green">
 
-## Development Roadmap
+```bash
+# Clone the repository
+git clone <your-repository-url>
 
-This section outlines the planned developmental phases and completed features.
+# Install dependencies
+npm install
 
-### Phase 1: Core Functionality (Completed)
-
-  - Basic quiz structure with 10 questions and 4 options per question.
-  - Navigation between questions.
-  - Ability to review and edit answers after completion.
-
-### Phase 2: UI Enhancements (In Progress/Planned)
-
-  - [x] Added Footer
-  - [x] Add anchor to Footer name and redirect to Portfolio
-  - [x] Add new Category for the quiz
-  - [ ] In the end, show answers to Users to make them aware of right or wrong answers
-  - [ ] Update Background, add relevant images
-  - [ ] Add quiz instructions in the beginning
-
-### Phase 3: Functionality Enhancements (Planned)
-
-  - [ ] Make Quiz Dynamic, jumble questions
-  - [ ] Add Back and Next Button during the quiz
-
-## Note:
-
-Please credit me if you plan to use this project.
-
-## Steps to Install
-
-1.  Clone the project: `git clone <your-repository-url>`
-2.  Install dependencies: `npm install`
-3.  Run the development server: `npm run dev`
-
-<hr /\>
-<center>&copy; Maria Mendonca</center>
+# Run the development server
+npm run dev
+</font>
